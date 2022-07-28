@@ -176,7 +176,7 @@ def main():
             st.subheader('Percentage of users per rating')
             st.image('./resources/imgs/C.jpeg', use_column_width=True)
             st.subheader('Ratings distribution')
-            st.image('Images/B.png', use_column_width=True)
+            st.image('./resources/imgs/B.jpeg', use_column_width=True)
             st.markdown("The train distribution shows that there are relatively fewer movies that are lower rated.\
             This can be because most of the users who didn't like the movie, didn't care enough to rate the movie. \
             You should note this, it can be useful later.\
