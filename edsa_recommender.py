@@ -101,9 +101,9 @@ def main():
 
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------------
     if page_selection == "Welcome":
-        st.title("Welcome to Movie Recommender")
+        st.header("Welcome to Movie Recommender")
 
-        st.image('Images/Movie_night.jpg', use_column_width=True)
+        st.image('./resources/imgs/Movie_night.jpeg', use_column_width=True)
 
         st.markdown("Are you a movie lover? Are you tired of wasting your time watching tons of trailers and ending up not watching their movies? Are you tired of finishing your popcorns before you find the right movie? That has come to an end!!")
         about = st.sidebar.checkbox("About")
@@ -123,11 +123,11 @@ def main():
     
 
     if page_selection == "Team":
-        st.title=("Meet The Team")
+        st.header("Meet The Team")
 
         st.subheader("**TECHIQ SOLUTIONS**")
 
-        st.image('Images/R.jfif',use_column_width=True)
+        st.image('./resources/imgs/R.jpeg',use_column_width=True)
         st.markdown("* Ramabopa Mahlatsi - Team Coordinator")
         st.markdown("* Lehutjo Maphuti")
         st.markdown("* Buthelezi Mandisa")
@@ -135,9 +135,9 @@ def main():
         st.markdown("* Mzilikazi Nobuntu")
 
     if page_selection == "Data Collection":
-        st.title("Data used")
+        st.header("Data used")
         st.subheader("Where did we get the data?")
-        st.image('Images/SD.jfif', use_column_width=True)
+        st.image('./resources/imgs/SD.jpeg', use_column_width=True)
         st.markdown("The data was obtained from MovieLens \
             which has the several millions 5-star ratings obtained from users using the online streaming recommendation system.\
             The IMBD (imbd_df) was legally scraped from IMDB.")
@@ -153,19 +153,19 @@ def main():
             st.markdown("* Train - The training split of the dataset. Contains user and movie IDs with associated rating data.")
     
     if page_selection =="EDA":
-        st.title("Exploratory Data Analysis")
+        st.header("Exploratory Data Analysis")
         st.write("This process will be referred to as Exploratory Data Analysis or EDA. \
         The reason we explore the data is to gain insight on the data and how it behaves. Exploratory data analysis (EDA) is a term for certain kinds of initial analysis and findings done with data sets, usually early on in an analytical process. \
         Some experts describe it as “taking a peek” at the data to understand more about what it represents and how to apply it.")
 
         st.subheader("Most common genres")
-        st.image('Images/E.png', use_column_width=True)
+        st.image('./resources/imgs/E.jpeg', use_column_width=True)
         st.markdown("The graph above shows that the most common genres are drama, comedy, thriller, etc.\
             People love drama movies more than any other genre therefore more of those should always form part of a user's recommendation.\
             Children and animation genres are equally common and this could be attributed to the fact that most children's movies are animated.")
         
         st.subheader('Ratings per viewer')
-        st.image('Images/D.png',use_column_width=True)
+        st.image('./resources/imgs/D.jpeg',use_column_width=True)
         st.markdown("The bar graph above shows the number of times users have made ratings. \
             About 20 000 users have only rated movies less than 10 times while more than 100 000 have rated more than 10 times. \
             There are super rators, such as userID 72315 that have made more than 10 000 ratings.\
@@ -174,7 +174,7 @@ def main():
         source = st.sidebar.checkbox("Distribution of ratings")
         if source:
             st.subheader('Percentage of users per rating')
-            st.image('Images/C.png', use_column_width=True)
+            st.image('./resources/imgs/C.jpeg', use_column_width=True)
             st.subheader('Ratings distribution')
             st.image('Images/B.png', use_column_width=True)
             st.markdown("The train distribution shows that there are relatively fewer movies that are lower rated.\
@@ -189,20 +189,20 @@ def main():
         source = st.sidebar.checkbox("Movie Titles")
         if source:
             st.subheader('Most Frequent words in titles')
-            st.image('Images/H.png', use_column_width=True)
+            st.image('./resources/imgs/H.jpeg', use_column_width=True)
             st.markdown("The visual above shows which words are commonly used when movies are titled. \
             The bigger the word, the more it is being used.\
             As can be seen, the word love, Man, and Girl appears the most.")
 
     if page_selection == "Modelling":
-        st.title("Modelling")
+        st.header("Modelling")
         st.subheader("Content-based Filtering")
-        st.image('Images/JJJ.png', use_column_width=True)
+        st.image('./resources/imgs/JJJ.jpeg', use_column_width=True)
         st.markdown('Uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback.')
 
         st.subheader("Colloboration-based filtering")
         st.markdown('builds a model from your past behavior (i.e. movies watched or selected by the you) as well as similar decisions made by other users.')
-        st.image('Images/SS.png', use_column_width=True)
+        st.image('./resources/imgs/SS.jpeg', use_column_width=True)
         st.markdown('The SVD and BaselineOnly algorithm gave us the best RMSE score, but SVD has a higher training time, therefore, we will train and predict with BaselineOnly. \
         We also decided to use collaborative model because of the cold-start problem. \
         The cold-start problem, which describes the difficulty of making recommendations when the users or the items are new, remains a great challenge for collaborative filtering. \
@@ -211,7 +211,7 @@ def main():
 
 
     if page_selection =="Reviews":
-        st.title("Get in touch with us")
+        st.header("Get in touch with us")
         st.markdown('''<span style="color:blue"> **Help us improve this app by rating it. Tell us how to give you a better user experience.** </span>''', unsafe_allow_html=True)
         @st.cache(allow_output_mutation=True)
         def get_data():
